@@ -1,0 +1,27 @@
+{% set name = "szip" %}
+{% set version = "2.1.1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - make
+    - {{ compiler('c') }}
+  run:
+    - hdf5
+
+about:
+  home: https://support.hdfgroup.org/doc_resource/SZIP
+  license: Free for noncommercial use
+  summary:
+    Szip, an implementation of the extended-Rice lossless compression
+    algorithm, provides lossless compression of scientific data. It is
+    an optional extension to HDF5.
